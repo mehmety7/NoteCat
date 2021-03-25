@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+      <!--xmlns:h="http://xmlns.jcp.org/jsf/html"> -->
+    <h:head>
+        <title>NoteCat++</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"></link>
+    
+      
+    <style>
+header {
+      width: 100%;
+      height: 100vh;
+      background: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080') no-repeat 50% 50%;
+      background-size: cover;
+}
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+.logo image{
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 10px 35px;
+      color: #fff;    
+      letter-spacing: 2px;
+      width: 10%;
+      height: 40px;
+      
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 55px;
+      list-style: none;
+      background: black;
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+.footer{
+  background: #152F4F;
+  color:white;
+  
+  .links{
+    ul {list-style-type: none;}
+    li a{
+      color: white;
+      transition: color .2s;
+      
+    }
+  }  
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:white;
+      transition: color .2s;
+      
+    }
+  } 
+  .location{
+    i{font-size: 18px;}
+  }
+ 
+}
+    </style>
+    </h:head>
+    <div class="wrapper">
+        <header>
+    <nav>
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+               <div class="logo">
+                   <img src="2j.png" alt=""/>
+               </div>
+               <div class="menu">
+                  <ul>
+                     <li><a href="index.xhtml">Anasayfa</a></li>
+                     <li><a href="iletişim.xhtml">İletişim</a></li>
+                     <li><div class="btn-group">
+                            <a href="girisyap.xhtml" class="btn btn-light" role="button">Giriş</a>
+                            <a href="kaydol.xhtml" class="btn btn-light" role="button">Kayıt Ol</a></div></li>
+                  </ul>
+
+               </div>
+            </nav>
+        </header>
+        
+    <div class="content">
+             <div class="container">
+  <div class="jumbotron text-center">
+    <h3>Hoş Geldiniz..</h3>      
+    <p>NoteCat++, sana eşsiz bir not tutma becerisi kazandırabilir, yeterki sen iste!</p>
+    <a href="iletişim.xhtml" class="btn btn-info" role="button">Destek ve önerilerin için bize ulaşabilirsin</a>
+  </div>
+                 
+                 
+        <div class="jumbotron text-center">       
+            <a><ins>Bullet Journal</ins></a><br/>
+            <a><u>Günlük</u></a><br/>
+            <a>Hatırlatıcılar</a><br/>
+            <a>Yapılacaklar Listesi</a><br/>
+            <a>Beslenme Notları</a><br/>
+            <a>Finansal Notlar</a><br/>
+            <a>Hazır Not Kağıtları</a><br/>
+  
+        </div>
+  <p></p>            
+  
+</div> 
+         </div>
+        </div>
+    
+    <h:body>
+        
+        <div class="mt-5 pt-5 pb-5 footer">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-xs-12 about-company">
+      <h2>Heading</h2>
+      <p class="pr-5 text-white-50">NoteCat++ bir üniversite proje ödevidir.<br/><ul><li>İzel Bulut</li><li>Alihan Ataş</li><li>Mehmet Yazıcı</li></ul></p>
+      
+      <p><a href="#" class="btn btn-secondary" role="button">Hakkımızda</a></p>
+    </div>
+    <div class="col-lg-3 col-xs-12 links">
+      <h4 class="mt-lg-0 mt-sm-3">Sayfalar</h4>
+        <ul class="m-0 p-0">
+          <li>- <a href="#">Lorem ipsum</a></li>
+          <li>- <a href="#">Nam mauris velit</a></li>
+          <li>- <a href="#">Etiam vitae mauris</a></li>
+          <li>- <a href="#">Fusce scelerisque</a></li>
+          <li>- <a href="#">Sed faucibus</a></li>
+          <li>- <a href="#">Mauris efficitur nulla</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12 location">
+      <h4 class="mt-lg-0 mt-sm-4">İletişim</h4>
+      <p>İstanbul Üniversitesi-Cerrahpaşa</p>
+      <p class="mb-0"><i class="fa fa-phone mr-3"></i>(777) 111-111</p>
+      <p><i class="fa fa-envelope-o mr-3"></i>info@notecat.com</p>
+    </div>
+  </div>
+  
+</div>
+</div>
+       
+
+    </h:body>
+</html>
+

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- addentry.html -->
+ <!-- Form for adding an entry to an address book -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+      <!--xmlns:h="http://xmlns.jcp.org/jsf/html"> -->
+    <h:head>
+        <title>İletişim</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"></link>
+    
+      
+    <style>
+header {
+width: 100%;
+      height: 100vh;
+      background: url('https://spiritualityhealth.com/assets/images/Articles/_articleSummaryImage/bestbooks.jpg') no-repeat 50% 50%;
+      background-size: cover;
+}
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+.logo image{
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 10px 35px;
+      color: #fff;    
+      letter-spacing: 2px;
+      width: 10%;
+      height: 40px;
+      
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 55px;
+      list-style: none;
+      background: black;
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+nav ul li {
+      display: inline-block;
+      padding: 16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+.row{
+    padding-left: 10px;
+    height: 505px;
+}
+.row h3{
+    padding-top: 140px;
+    color: black;
+}
+.row h4{
+    padding-top: 190px;
+    color: black;
+}
+.row p{
+    color: black;
+}
+
+    </style>
+    </h:head>
+    <div class="wrapper">
+        <header>
+    <nav>
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+               <div class="logo">
+                   <img src="2j.png" alt=""/>
+               </div>
+               <div class="menu">
+                  <ul>
+                     <li><a href="index.xhtml">Anasayfa</a></li>
+                     <li><a href="iletişim.xhtml">İletişim</a></li>
+                     <li><div class="btn-group">
+                            <a href="girisyap.xhtml" class="btn btn-light" role="button">Giriş</a>
+                            <a href="kaydol.xhtml" class="btn btn-light" role="button">Kayıt Ol</a></div></li>
+                  </ul>
+
+               </div>
+            </nav>
+            </header>
+            <div class="row">
+  <div class="col-md-8">
+      <h3>Görüşlerini bildirdiğin için teşekkür ederiz.</h3>
+      <form action="index.xhtml" method="post">
+        <input class="form-control" name="name" placeholder="İsim..." /><br />
+        <input class="form-control" name="phone" placeholder="Telefon..." /><br />
+        <input class="form-control" name="email" placeholder="E-mail..." /><br />
+        <textarea class="form-control" name="text" placeholder="Size nasıl yardımcı olabiliriz?" style="height:150px;"></textarea><br />
+        <button type="submit" action="index.xhtml" class="btn btn-primary btn-lg"><i class="fa fa-paper-plane"></i>  Gönder</button><br /><br />
+      </form>
+  </div>
+  <div class="col-md-4">
+          <h4 class="mt-lg-0 mt-sm-4">İletişim</h4>
+
+      <p class="pr-5 text-white-50">NoteCat++ bir üniversite proje ödevidir.<br/><ul><li>İzel Bulut</li><li>Alihan Ataş</li><li>Mehmet Yazıcı</li></ul></p>
+      <p>İstanbul Üniversitesi-Cerrahpaşa</p>
+      <p class="mb-0"><i class="fa fa-phone mr-3"></i>(777) 111-111</p>
+      <p><i class="fa fa-envelope"></i>    info@notecat.com</p>
+
+
+
+  </div>
+
+</div>
+    </div>
+        
+    <h:body>
+         
+    </h:body>
+</html>
+

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- index.html -->
+ <!-- Displays an h:dataTable of the addresses in the address book -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Notlar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+     
+        
+        <style>
+            body{
+                background-color: #e3efff;
+            }            
+            
+            
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+.sidenav h2, h3, h5{
+    font-family: Tai Le;
+    color: whitesmoke;
+    padding-left: 15px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.actived {
+  background-color: darkgrey;
+  color: white;
+}
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  padding-top: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.main h2 a{
+    padding-top: 40px;
+    float: right;
+    font-size: 10px;
+}
+
+.container{
+    padding-left: 200px;
+}
+
+ 
+        </style>
+    </h:head>
+    
+    <div class="sidenav">
+         <h2>Hoş Geldin</h2>
+         <h3>#{LoginBean.name}</h3>
+         <h5>#{LoginBean.mail}</h5>
+         <a href="profil.xhtml"><i class="fa fa-home"></i> Profil</a>
+         <a href="önemli.xhtml"><i class="fas fa-star"></i> Yıldızlı Notlar</a>
+          <button class="dropdown-btn"><i class="fa fa-book"> Dökümanlar</i> 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="notlar.xhtml">Notlar</a>
+    <a href="listeler.xhtml">Listeler</a>
+    <a href="hatırlatıcılar.xhtml">Hatırlatıcılar</a>
+  </div>
+     <a href="copkutusu.xhtml"><i class="fa fa-trash"></i> Çöp Kutusu</a>
+     <a href="ayarlar.xhtml"><i class="fa fa-cog"></i> Profil Ayarları</a>
+     <a href="#{LoginBean.doLogout()}"><i class="fa fa-window-close"></i> Çıkış</a>
+
+
+</div>
+        
+        <div class="main">
+            
+            
+            
+            
+        </div>
+        
+         <script  type="text/javascript">
+          
+          //<![CDATA[
+ var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("actived");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+   //]]>   
+      </script>
+    <h:body>
+        <div class="container" style="margin-top: 25px">
+      <h2>Yıldızlı Notlar</h2>
+      <div style="margin-top: 25px">
+      <h:dataTable value="#{NoteBean.onemliListele()}" var="myvariable"
+ border="5" cellpadding="10" cellspacing="4" >
+ 
+<h:column>
+    <f:facet name="header">Not Başlığı</f:facet>
+        #{myvariable.n_title}
+</h:column>
+ <h:column>
+    <f:facet name="header">Not Tarihi</f:facet>
+        #{NoteBean.stringDate(myvariable.n_save)}
+  </h:column>
+  <h:column>
+    <f:facet name="header">Önemli</f:facet>
+    <i class="#{MarkedBean.star(myvariable.marked)}"></i>
+  </h:column>
+         <h:column>
+            <h:form>
+                <h:commandButton  value="İşareti değiştir" action="#{MarkedBean.isaretKaydet()}" class="btn btn-info btn-block">
+                  <f:setPropertyActionListener target="#{MarkedBean.noteid}" value="#{myvariable.n_id}" />
+                  <f:setPropertyActionListener target="#{MarkedBean.marked}" value="#{myvariable.marked}" />
+                             </h:commandButton>
+            </h:form>
+      </h:column>
+       <h:column>
+          <h:form>
+              <h:commandButton  value="Bu notu aç" action="#{NoteBean.notGoruntule()}" class="btn btn-info btn-block">
+                  <f:setPropertyActionListener target="#{NoteBean.noteid}" value="#{myvariable.n_id}" />
+                             </h:commandButton>
+           </h:form>
+      </h:column>
+ </h:dataTable>
+          </div>
+          </div>
+
+    </h:body>
+    
+    
+</html>

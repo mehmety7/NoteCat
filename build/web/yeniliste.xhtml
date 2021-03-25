@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Yeni Liste Sayfası</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"></link>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+     
+        
+        <style>
+            body{
+                background: #e3efff;
+            }            
+            
+            
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+.sidenav h2, h3, h5{
+    font-family: Tai Le;
+    color: whitesmoke;
+    padding-left: 7px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.actived {
+  background-color: darkgrey;
+  color: white;
+}
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  padding-top: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.main h2 a{
+    padding-top: 40px;
+    float: right;
+    font-size: 10px;
+}
+
+.container{
+    padding-left: 200px;
+}
+
+	.note{
+		padding: 4%;
+		height: 400px;
+	}
+	
+	.note-form label{
+		font-weight:600;
+	}
+	.col-sm-offset-2 button{
+		background: #25274d;
+		color: #fff;
+		font-weight: 600;
+		width: 25%;
+	}
+	.note-form button:focus{
+		box-shadow:none;
+	}
+        .form-control{
+            background-color: rgba(255,255,255,0.6);
+        }
+        .change_button button{
+            width: 30px;
+            height: 30px;
+        }
+        .note-form{
+            padding-top: 15px;
+        }
+        </style>
+    </h:head>
+    
+<div class="sidenav">
+         <h2>Hoş Geldin</h2>
+         <h3>#{LoginBean.name}</h3>
+         <h5>#{LoginBean.mail}</h5>
+         <a href="profil.xhtml"><i class="fa fa-home"></i> Profil</a>
+         <a href="önemli.xhtml"><i class="fas fa-star"></i> Yıldızlı Notlar</a>
+          <button class="dropdown-btn"><i class="fa fa-book"> Dökümanlar</i> 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="notlar.xhtml">Notlar</a>
+    <a href="listeler.xhtml">Listeler</a>
+    <a href="hatırlatıcılar.xhtml">Hatırlatıcılar</a>
+  </div>
+     <a href="copkutusu.xhtml"><i class="fa fa-trash"></i> Çöp Kutusu</a>
+     <a href="ayarlar.xhtml"><i class="fa fa-cog"></i> Profil Ayarları</a>
+     <a href="#{LoginBean.doLogout()}"><i class="fa fa-window-close"></i> Çıkış</a>
+
+
+</div>
+        
+        <div class="main">
+            
+            
+            
+            
+        </div>
+        
+         <script  type="text/javascript">
+          
+          //<![CDATA[
+ var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("actived");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+   //]]>   
+      </script>
+    <h:body>
+        <div class="container">
+  <div class="card img-fluid" style="width:850px">
+    <img class="card-img-top" src="ocean.jpg" alt="Card image" style="width:850px;height:750px"/>
+    <div class="card-img-overlay">
+        <h:form>
+        <div style="margin-left: 500px">
+            <h:outputText id="PageBean" value="Arka plan seçenekleri: " style="background:lightgray; color:black"/>
+                <h:selectOneMenu value="#{PageBean.background}" onchange="submit()"
+                                 valueChangeListener="#{PageBean.pageBackChanged}">
+                    <f:selectItems value="#{PageBean.pageInMap}" />
+                </h:selectOneMenu> 
+            </div>
+        </h:form>
+               <h:form>
+        <div class="note-form">
+                                <div class="form-group">
+
+                                    <h:inputText class="form-control" id="lhead" value="#{ListBean.title}"
+                                                 pt:placeholder="Başlık yazınız..."/>
+				</div>
+            			<div>
+                                        <label class="form-control">
+                                            <script> document.write(new Date().toLocaleDateString()); </script>
+                                        </label>
+				</div>
+                          <h:form>
+                            <ui:repeat value="#{ListBean.elements}" var="" varStatus="status">            
+                                <div class="form-group" title="Liste Maddeleri">
+                                        <br/>
+                                <h:inputText class="form-control" value="#{ListBean.elements[status.index]}" 
+                                                  pt:placaholder="Madde yazınız.." />
+                                </div>
+                                </ui:repeat>
+                                     <h:inputText value="#{ListBean.newElm}" />
+				<div class="form-group">  
+				  <div class="col-sm-offset-2">
+                                    <h:commandButton id="submit" styleClass="btn-submit" style="margin-left: 10px" 
+                                                     value="Listeye Ekle" action="#{ListBean.elemanEkle()}"/>                                  
+                                  </div>
+				</div>
+                            </h:form>
+				<div class="form-group">  
+				  <div class="col-sm-offset-2">
+                                    <h:commandButton id="submit" styleClass="btn-submit" style="margin-left: 10px" 
+                                                     value="Kaydet" action="#{ListBean.listeEkle()}"/>                                  
+                                  </div>
+				</div>
+			</div>
+            </h:form>
+        
+    </div>
+  </div>
+            
+</div>
+        
+        
+    </h:body>
+    
+    
+</html>

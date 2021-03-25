@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- addentry.html -->
+ <!-- Form for adding an entry to an address book -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      <!--xmlns:h="http://xmlns.jcp.org/jsf/html"> -->
+    <h:head>
+        <title>NoteCat++</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"></link>
+    
+      
+    <style>
+
+html,body{
+background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 600px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.icon a{
+font-size: 60px;
+margin-left: 5px;
+color: #FFC312;
+}
+.icon image{
+    border-radius: 100%;
+}
+
+.card-header h3{
+color: white;
+}
+
+.icon{
+position: absolute;
+right: 5px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+.form-group label{
+    color: white;
+    font-size: 20px;
+}
+
+.text-input{
+    width: 300px;
+}
+
+.btn-submit{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 150px;
+    height: 40px;
+    
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+background-size:auto;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 150px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+color: #FFC312;
+}
+
+.card-footer{
+    margin-top: -150px;
+}
+    </style>
+    </h:head>
+   
+   
+    <h:body>
+        <div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>NoteCat++ <br/> Hesap Oluşturma</h3>
+				<div class="d-flex justify-content-center icon">
+                                    <a href="index.xhtml"><img src="2.PNG" alt="Anasayfa" width="80%" height="80%"/></a>
+					
+				</div>
+			</div>
+			<div class="card-body">
+				<h:form>
+					<div class="form-group">
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                                    <h:inputText id="mail" styleClass="text-input" value="#{UserBean.mail}" pt:placeholder="Email giriniz.." required="true"/>
+						</div>				
+					</div>
+ 					<div class="form-group">
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-book"></i></span>
+                                                    <h:inputText id="name" styleClass="text-input" value="#{UserBean.name}" pt:placeholder="Ad Soyad giriniz.." required="true"/>
+						</div>				
+					</div>
+					<div class="form-group">
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                                    <h:inputText id="pwd" styleClass="text-input" value="#{UserBean.password}" pt:placeholder="Parola giriniz.." required="true"/>
+						</div>				
+					</div>
+					<div class="form-group">
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                                    <h:inputText id="rpt" styleClass="text-input" value="#{UserBean.repeat}" pt:placeholder="Parolayı tekrar giriniz.." required="true"/>
+						</div>				
+					</div>
+					<div class="form-group">
+                                            <label for="qs" >Güvenlik Sorusu Belirleme</label>	
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                                    <h:selectOneListbox id="qs" value = "#{UserBean.question}"> 
+                                                        <f:selectItem itemValue = "Annenizin kızlık soyadı nedir?" itemLabel = "Annenizin kızlık soyadı nedir?" /> 
+                                                        <f:selectItem itemValue = "En sevdiğiniz yemek nedir?" itemLabel = "En sevdiğiniz yemek nedir?" /> 
+                                                        <f:selectItem itemValue = "En sevdiğiniz ünlü kimdir?" itemLabel = "En sevdiğiniz ünlü kimdir?" /> 
+							<f:selectItem itemValue = "Çocukluk lakabınız nedir?" itemLabel = "Çocukluk lakabınız nedir?" /> 
+                                                        <f:selectItem itemValue = "İlk aracınızın modeli nedir?" itemLabel = "İlk aracınızın modeli nedir?" />     
+                                                              </h:selectOneListbox>  
+					</div>
+                                            </div>
+						<div class="form-group">	
+						<div class="input-group-prepend">  
+                                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                                    <h:inputText id="ans" styleClass="text-input" value="#{UserBean.answer}" pt:placeholder="Yanıtınızı giriniz.." required="true"/>
+						</div>				
+					</div>
+					<div class="form-group">
+                                            <h:commandButton id="submit" styleClass="btn-submit" value="Hesap Oluştur" action="#{UserBean.signUp()}"/>
+                                        </div>
+				</h:form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Zaten Kayıtlıysan<a href="girisyap.xhtml">Giriş Yap</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+       
+
+    </h:body>
+</html>
+
